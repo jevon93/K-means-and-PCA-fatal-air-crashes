@@ -123,3 +123,4 @@ p + geom_text(data=loadings,
   labs(x = "PC1", y = "PC2")
 
 ##This type of analysis can be applied to all types of quantitative data. Outcomes may vary
+##A section which utilises the 85-99 as training data to predict the 00-14  "test" data via k-means will be added soon
