@@ -13,6 +13,8 @@ It is apparent from the analysis of this data that most airlines which had bad a
 continued to have high accident and fatality rates relevant to other airlines in the following years. And that
 specific groups of airlines seem to be consistent outliers.
 
+We also show how principal component analysis can be used to find the most important features in a data set. Both sets of fatalities features account for a whopping 95% of overall variability in our data.
+
 This type of cluster analysis could be used on any type of quantitative data. It is very useful for classifying distinct groups
 and informing decisions. For instance, we would not reccomend flying or investing in Malaysian Airlines, Air France, United/Continental
 or Delta/Northwest. 
