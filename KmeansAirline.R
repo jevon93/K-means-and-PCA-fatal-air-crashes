@@ -85,3 +85,37 @@ grid.arrange(g1, g2, g3, g4, nrow = 2)
 
 ##We can see by these plots that these same bad actor airlines are all high in some respect to fatalities,
 ##accidents and incidents.
+
+
+##Now we can apply principal component analysis to find out which variables account for most of the
+## variability in our data.
+
+ir.pca <- prcomp(airlines[,c(-1,-2,-3,-10)],
+                 center = TRUE,
+                 scale. = TRUE)
+
+print(ir.pca)
+
+
+
+plot(ir.pca, type = "l")
+
+
+##As we can see from our results and the plot above, two variables account for a whopping 95% of the variance in our
+##data. Incidents and airline accidents can both be adequately explained by the number of fatalities an airline 
+##has had.
+
+##The plot below can demonstrate
+
+theta <- seq(0,2*pi,length.out = 100)
+circle <- data.frame(x = cos(theta), y = sin(theta))
+p <- ggplot(circle,aes(x,y)) + geom_path()
+
+loadings <- data.frame(ir.pca$rotation, 
+                       .names = row.names(ir.pca$rotation))
+p + geom_text(data=loadings, 
+              mapping=aes(x = PC1, y = PC2, label = .names, colour = .names)) +
+  coord_fixed(ratio=1) +
+  labs(x = "PC1", y = "PC2")
+
+##Our two fatalities features can explain all other data points. In fact, the other data points aren't even needed.
