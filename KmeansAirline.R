@@ -1,5 +1,5 @@
 library(factoextra) ##for fviz_cluster
-library(class) ## for knn
+library(class) ## for k means
 library(gridExtra) ##for visualisation
 library(ggplot2) ##for visualisation
 library(fivethirtyeight) ## for airline data
